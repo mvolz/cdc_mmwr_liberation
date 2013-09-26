@@ -1,0 +1,31 @@
+To deploy the Django project on your local machine*
+
+*on Ubuntu.
+
+Install python 2.7, if you haven't already.
+
+Install pip and Django:
+
+> sudo apt-get install python-pip
+> sudo pip install Django==1.5.4
+
+Assuming you've already cloned the project, cd into the 
+cdc_mmwr_liberation directory and create the following empty files:
+
+> touch wonder/local_settings.py
+> touch wonder.db
+
+Open up the wonder/settings.py file in your favourite text editor.
+Copy the code for the object DATABASES to your empty local_settings.py 
+file. Edit the 'NAME' field to contain the path to the empty sqlite3 db
+you just created called wonder.db. Then sync the database:
+
+> python manage.py syncdb
+
+You should go ahead and create a superuser at this point.
+
+> python manage.py runserver 8080 &
+
+The project should now be running on localhost:8080
+
+

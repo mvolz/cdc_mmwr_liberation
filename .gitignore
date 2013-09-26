@@ -3,3 +3,5 @@
 *.tab
 *.bak
 *.swp
+*.db
+local_settings.py
